@@ -69,7 +69,7 @@ class LaporanResource extends Resource
                 'dinas_id' => auth()->id(), // Admin (dinas) yang menyetujui
             ]);
         })
-        ->form([ // Muncul form modal kecil
+        ->form([
             Select::make('petugas_id')
                 ->label('Pilih Petugas')
                 ->options(
@@ -79,7 +79,7 @@ class LaporanResource extends Resource
                 )
                 ->required(),
         ])
-        ->requiresConfirmation() // Tampilkan modal konfirmasi
+        ->requiresConfirmation() // modal konfirmasi
         ->color('success')
         ->icon('heroicon-o-check-circle')
         // Hanya tampilkan tombol ini jika statusnya masih 'pending'
@@ -107,5 +107,21 @@ class LaporanResource extends Resource
             'create' => Pages\CreateLaporan::route('/create'),
             'edit' => Pages\EditLaporan::route('/{record}/edit'),
         ];
+    }
+
+    public static function getEloquentQuery(): Builder{
+        $user = auth()->user();
+
+        // admin liat semua tugas
+        if ($user->role->nama_role === 'Admin') {
+            return parent::getEloquentQuery();
+        }
+
+        // petugas
+        if ($user->role->nama_role === 'Petugas') {
+            return parent::getEloquentQuery()->where('petugas_id', $user->id);
+        }
+        
+        return parent::getEloquentQuery()->where('id', 0);
     }
 }
