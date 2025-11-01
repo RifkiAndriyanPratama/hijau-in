@@ -10,6 +10,8 @@ class Laporan extends Model
 {
     protected $guarded = [];
 
+    protected $table = 'laporan';
+
 public function pelapor(): BelongsTo
 {
     return $this->belongsTo(User::class, 'pelapor_id');
