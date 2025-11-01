@@ -60,7 +60,7 @@ class LaporanResource extends Resource
         ->actions([
     Tables\Actions\ViewAction::make(),
 
-    // INI AKSI UNTUK ADMIN
+    // admin
     Action::make('Setujui & Tugaskan')
         ->action(function (Laporan $record, array $data): void {
             $record->update([
