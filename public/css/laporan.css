@@ -1,0 +1,143 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #fff;
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: #4b9e27;
+  color: white;
+  height: 100vh;
+  padding: 15px;
+  transition: all 0.3s ease;
+  position: fixed;
+}
+
+.sidebar.collapsed {
+  width: 70px;
+}
+
+.logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h2 {
+  font-size: 22px;
+  margin: 0;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.nav-item {
+  margin: 20px 0;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 15px;
+  display: block;
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+
+.nav-item:hover a {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Aktif (halaman sekarang) */
+.nav-item.active a {
+  background-color: white;
+  color: #4b9e27;
+  font-weight: 600;
+}
+
+/* Collapse style */
+.sidebar.collapsed .logo h2 {
+  display: none;
+}
+
+.sidebar.collapsed .nav-item a {
+  text-align: center;
+  font-size: 0;
+}
+
+.sidebar.collapsed .nav-item a::before {
+  content: "•";
+  font-size: 20px;
+  color: white;
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 240px;
+  padding: 30px;
+  transition: margin-left 0.3s ease;
+  flex: 1;
+}
+
+.main-content.expanded {
+  margin-left: 100px;
+}
+
+.form-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form-laporan {
+  max-width: 700px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-laporan input,
+.form-laporan select,
+.form-laporan textarea {
+  border: 1px solid #4b9e27;
+  border-radius: 20px;
+  padding: 8px 12px;
+  outline: none;
+  font-family: inherit;
+}
+
+.form-laporan img {
+  border-radius: 15px;
+  width: 100%;
+  height: auto;
+}
+
+.submit-btn {
+  background-color: #4b9e27;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  align-self: flex-end;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #3d851f;
+}

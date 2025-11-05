@@ -21,4 +21,16 @@ Route::middleware('auth')->group(function () {
     Route::post('/lapor', [LaporanPublikController::class, 'store'])->name('lapor.store');
 });
 
+Route::get('peng', function () {
+    return view('dpengguna');
+});
+
+Route::get('Laporan', function () {
+    return view('laporan');
+});
+
+Route::get('daur', function () {
+    return view('daurulang');
+});
+
 require __DIR__.'/auth.php';
