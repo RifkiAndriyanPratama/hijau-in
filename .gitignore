@@ -1,4 +1,4 @@
-gi*.log
+gigit*.log
 .DS_Store
 .env
 .env.backup

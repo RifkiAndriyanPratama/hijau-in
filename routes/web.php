@@ -33,4 +33,8 @@ Route::get('daur', function () {
     return view('daurulang');
 });
 
+Route::get('progress', function () {
+    return view('progress');
+});
+
 require __DIR__.'/auth.php';

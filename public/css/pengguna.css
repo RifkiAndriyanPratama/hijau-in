@@ -1,4 +1,3 @@
-/* ====== Global Style ====== */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -9,9 +8,11 @@ body {
 
 img {
   user-select: none;
+  max-width: 100%;
+  height: auto;
 }
 
-/* ====== Header ====== */
+/* HEADER */
 header {
   display: flex;
   justify-content: space-between;
@@ -41,7 +42,6 @@ header {
   color: #C9F9A3;
 }
 
-/* ====== Navbar ====== */
 .navbar {
   display: flex;
   gap: 50px;
@@ -79,7 +79,6 @@ header {
   width: 100%;
 }
 
-/* ====== Auth Buttons ====== */
 .auth-buttons {
   display: flex;
   gap: 10px;
@@ -112,10 +111,7 @@ header {
   background-color: #326b10;
 }
 
-
-
-
-/* ====== Hero Section ====== */
+/* HERO SECTION */
 .hero {
   display: flex;
   justify-content: center;
@@ -123,6 +119,8 @@ header {
   position: relative;
   margin-top: 80px;
   min-height: 80vh;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
 .welcome-box {
@@ -160,7 +158,6 @@ header {
   line-height: 1.6;
 }
 
-/* Animations */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
@@ -171,7 +168,6 @@ header {
   to { transform: rotate(360deg); }
 }
 
-/* ====== Images (Better Layout) ====== */
 .img-left,
 .img-right,
 .img-bottom {
@@ -209,11 +205,11 @@ header {
   right: 360px;
 }
 
-/* ====== MENU SECTION ====== */
+/* MENU */
 .menu-section {
   background-color: #A8D08D;
   text-align: center;
-  padding: 100px 0;
+  padding: 100px 20px;
 }
 
 .menu-title {
@@ -227,7 +223,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 300px;
+  gap: 80px;
   flex-wrap: wrap;
 }
 
@@ -236,7 +232,7 @@ header {
   border: 3px solid #155C00;
   border-radius: 25px;
   width: 320px;
-  height: 400px;
+  min-height: 350px;
   padding: 40px 30px;
   box-sizing: border-box;
   display: flex;
@@ -254,13 +250,12 @@ header {
 
 .menu-card p {
   color: #155C00;
-  font-size: 30px;
-  line-height: 1.5;
+  font-size: 24px;
+  line-height: 1.4;
   font-weight: 500;
   text-align: center;
 }
 
-/* ====== Button ====== */
 .menu-btn {
   background-color: #4BA123;
   color: white;
@@ -279,10 +274,10 @@ header {
   transform: translateY(2px);
 }
 
-/* ====== ABOUT SECTION ====== */
+/* ABOUT */
 .about-section {
   background-color: #ffffff;
-  padding: 100px 80px;
+  padding: 100px 40px;
 }
 
 .about-content {
@@ -334,12 +329,12 @@ header {
   margin-bottom: 20px;
 }
 
-/* ====== CONTACT SECTION ====== */
+/* CONTACT */
 .contact-section {
   background-color: #126b1a;
   color: white;
   text-align: center;
-  padding: 50px 0;
+  padding: 50px 20px;
 }
 
 .contact-section h2 {
@@ -371,12 +366,10 @@ header {
   height: 24px;
 }
 
-/* ====== RESPONSIVE DESIGN ====== */
-
-/* Tablet */
+/* TABLET */
 @media (max-width: 992px) {
   header {
-    padding: 20px 40px;
+    padding: 20px 30px;
   }
 
   .navbar {
@@ -400,9 +393,13 @@ header {
     width: 350px;
     right: 200px;
   }
+
+  .menu-card {
+    width: 280px;
+  }
 }
 
-/* Mobile */
+/* MOBILE */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -452,6 +449,10 @@ header {
     gap: 40px;
   }
 
+  .menu-card {
+    width: 90%;
+  }
+
   .about-content {
     flex-direction: column;
     align-items: center;
@@ -473,13 +474,74 @@ header {
     flex-direction: column;
   }
 
-  
+  .menu-title {
+    font-size: 36px;
+  }
 
+  .about-logo {
+    text-align: center;
+  }
 
+  /* ====== BOTTOM NAVBAR ====== */
+.bottom-navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #3E7F14;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  border-top: 2px solid #C9F9A3;
+  z-index: 200;
+}
+
+.bottom-navbar a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.bottom-navbar a img {
+  width: 26px;
+  height: 26px;
+  margin-bottom: 4px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.bottom-navbar a:hover img {
+  transform: scale(1.1);
+  filter: brightness(0) invert(0.8);
+}
+
+.bottom-navbar a.active span {
+  color: #C9F9A3;
+  font-weight: 600;
+}
+
+.bottom-navbar a span {
+  font-size: 13px;
+}
+
+/* Responsive - Bottom Navbar hanya muncul di mobile */
+@media (min-width: 769px) {
+  .bottom-navbar {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  header {
+    display: none;
+  }
 }
 
 
 
 
-
-
+}

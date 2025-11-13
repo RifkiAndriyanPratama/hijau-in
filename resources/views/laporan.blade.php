@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Form Laporan</title>
-  <link rel="stylesheet" href="{{ asset('css/filament/filament/laporan.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/laporan.css') }}">
 </head>
 <body>
 
@@ -60,6 +60,34 @@
       <button type="submit" class="submit-btn">Submit →</button>
     </form>
   </div>
+
+
+
+  <div class="bottom-nav">
+     <div class="middle-btn">
+      <a href="/Laporan">
+        <div class="circle-btn">
+          <img src="{{ asset('icons/report.png') }}" alt="Laporan">
+        </div>
+      </a>
+    </div>
+    <a href="/daur" class="bottom-item">
+      <img src="{{ asset('icons/recycle.png') }}" alt="Daur">
+      <span>Daur</span>
+    </a>
+
+    <a href="/progress" class="bottom-item">
+      <img src="{{ asset('icons/progress.png') }}" alt="Progress">
+      <span>Progress</span>
+    </a>
+
+    <a href="/profil" class="bottom-item">
+      <img src="{{ asset('icons/user.png') }}" alt="Profil">
+      <span>Profil</span>
+    </a>
+  </div>
+
+
 
   <script>
     const toggleBtn = document.getElementById('toggleBtn');

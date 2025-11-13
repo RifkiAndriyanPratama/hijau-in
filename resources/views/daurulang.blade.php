@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Form Daur Ulang</title>
-  <link rel="stylesheet" href="{{ asset('css/filament/filament/daurulang.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/daurulang.css') }}">
 </head>
 <body>
 
   <div class="sidebar" id="sidebar">
     <div class="logo">
-      <h2>hijauIN🌿</h2>
+      <h2>hijauIN</h2>
       <button class="toggle-btn" id="toggleBtn">☰</button>
     </div>
 
@@ -58,6 +58,31 @@
 
       <button type="submit" class="submit-btn">Submit →</button>
     </form>
+  </div>
+
+
+  <div class="bottom-nav">
+     <a href="/Laporan" class="bottom-item active">
+      <img src="{{ asset('icons/report.png') }}" alt="Laporan">
+      <span>Laporan</span>
+    </a>
+    <div class="middle-btn">
+      <a href="/daur">
+        <div class="circle-btn">
+          <img src="{{ asset('icons/recycle.png') }}" alt="Daur">
+        </div>
+      </a>
+    </div>
+
+    <a href="/progress" class="bottom-item">
+      <img src="{{ asset('icons/progress.png') }}" alt="Progress">
+      <span>Progress</span>
+    </a>
+
+    <a href="/profil" class="bottom-item">
+      <img src="{{ asset('icons/user.png') }}" alt="Profil">
+      <span>Profil</span>
+    </a>
   </div>
 
 
