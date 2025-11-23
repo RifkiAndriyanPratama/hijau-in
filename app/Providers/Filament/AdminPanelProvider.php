@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use Filament\Enums\ThemeMode;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -27,33 +28,70 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
-            ->brandName('HijauIN')
-            ->brandLogo(asset('images/logo-hijauin.png')) // unified logo PNG
-            ->brandLogoHeight('2rem')
-            ->viteTheme('resources/css/filament/hijauin.css')
+            
+            // --- TEMA & WARNA (Mode Gelap Permanen) ---
+            ->defaultThemeMode(ThemeMode::Dark)
             ->colors([
                 'primary' => Color::Emerald,
+                'gray' => Color::Slate,
             ])
+            ->viteTheme('resources/css/filament/hijauin.css')
+            ->font('Poppins')
+
+            // --- BRANDING ---
+            ->brandName('HijauIN Admin')
+            ->brandLogo(asset('images/logo-hijauin.png'))
+            ->brandLogoHeight('3rem')
+            ->favicon(asset('images/logo-hijauin.png'))
+
+            // --- LAYOUT ---
+            ->sidebarCollapsibleOnDesktop()
+            ->maxContentWidth('full')
+
+            // --- NAVIGASI ---
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
                 Pages\Dashboard::class,
             ])
+
+            // --- WIDGETS ---
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
-                Widgets\FilamentInfoWidget::class,
             ])
-                        ->renderHook('panels::body.end', fn() => <<<'HTML'
-<script>
-document.addEventListener('scroll', () => {
-    const topbar = document.querySelector('.fi-topbar');
-    if(!topbar) return;
-    topbar.classList.toggle('scrolled', window.scrollY > 4);
-});
-</script>
+
+            // --- CUSTOM CSS & JS (Scrollbar & Topbar) ---
+            ->renderHook('panels::body.end', fn() => <<<'HTML'
+                <style>
+                    /* Scrollbar Kustom */
+                    ::-webkit-scrollbar { width: 8px; height: 8px; }
+                    ::-webkit-scrollbar-track { background: transparent; }
+                    ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+                    ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+                    .fi-topbar { transition: all 0.3s ease; }
+                </style>
+
+                <script>
+                    document.addEventListener('scroll', () => {
+                        const topbar = document.querySelector('.fi-topbar');
+                        if (!topbar) return;
+                        
+                        if (window.scrollY > 10) {
+                            topbar.style.backgroundColor = 'rgba(2, 6, 23, 0.8)'; 
+                            topbar.style.backdropFilter = 'blur(12px)';
+                            topbar.classList.add('shadow-md', 'border-b', 'border-white/5');
+                        } else {
+                            topbar.style.backgroundColor = '';
+                            topbar.style.backdropFilter = '';
+                            topbar.classList.remove('shadow-md', 'border-b', 'border-white/5');
+                        }
+                    });
+                </script>
 HTML
-                        )
+            )
+
+            // --- MIDDLEWARE ---
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,

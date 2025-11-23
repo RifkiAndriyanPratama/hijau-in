@@ -93,10 +93,6 @@
     <h2>Contact Us</h2>
     <div class="contact-info">
       <div class="contact-item">
-        <img src="{{ asset('icons/whatsapp.png') }}" alt="WhatsApp">
-        <p>+6285181728983</p>
-      </div>
-      <div class="contact-item">
         <img src="{{ asset('icons/email.png') }}" alt="Email">
         <p>hijauin@gmail.com</p>
       </div>
