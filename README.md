@@ -59,33 +59,34 @@ Proyek ini menggunakan _tech stack_ modern:
 Ikuti langkah berikut untuk menjalankan proyek di komputer Anda:
 
 1. **Clone Repository**
+
    ```bash
    git clone [https://github.com/username/hijauin.git](https://github.com/username/hijauin.git)
    cd hijauin
-````
+   ```
 
-2.  **Setup Environment**
+3.  **Setup Environment**
 
     ```bash
     cp .env.example .env
     # Buka file .env dan sesuaikan konfigurasi database Anda
     ```
 
-3.  **Install Dependencies**
+4.  **Install Dependencies**
 
     ```bash
     composer install
     npm install
     ```
 
-4.  **Database & Seeding**
+5.  **Database & Seeding**
 
     ```bash
     php artisan migrate --seed
     # Perintah ini akan membuat akun Superadmin default
     ```
 
-5.  **Jalankan Aplikasi**
+6.  **Jalankan Aplikasi**
 
     ```bash
     npm run dev
@@ -107,8 +108,3 @@ Dipersembahkan oleh mahasiswa yang peduli lingkungan:
 <br>
 \<p\>Dibuat dengan ❤️ untuk Bumi yang lebih hijau.\</p\>
 \</div\>
-
-```
-
-Apakah Anda ingin saya buatkan file `CONTRIBUTING.md` sekalian untuk panduan orang lain yang ingin ikut berkontribusi di repo ini?
-```
