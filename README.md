@@ -1,4 +1,3 @@
-````markdown
 <div align="center">
   <a href="https://github.com/username/hijauin">
     <img src="public/images/logo-hijauin.png" alt="Logo HijauIN" width="120" height="120">
