@@ -1,0 +1,27 @@
+# Project Context
+Nama Proyek: HijauIN
+Deskripsi: Aplikasi web pelaporan lingkungan.
+Tech Stack: Laravel 11, Filament v3, Laravel Breeze, MySQL, TailwindCSS.
+Bahasa: PHP 8.2+.
+
+# Peran & Alur Kerja (User Roles & Flow)
+1. User (Masyarakat):
+   - Dapat register dan login (via Breeze).
+   - Dapat membuat laporan baru (Upload foto bukti, deskripsi, lokasi).
+   - Hanya bisa melihat laporan milik sendiri.
+2. Admin (Pemerintah):
+   - Login via Filament Panel.
+   - Dapat melihat semua laporan masuk.
+   - Dapat mengubah status laporan (Pending -> Proses -> Selesai).
+   - Tidak bisa menghapus laporan.
+3. Superadmin:
+   - Login via Filament Panel.
+   - Memiliki akses penuh (CRUD) ke semua resource (Users, Admins, Reports).
+   - Bisa mengelola User dan Admin baru.
+
+# Coding Guidelines
+- Gunakan Prinsip SOLID dan DRY.
+- Gunakan "Strict Typing" pada setiap file PHP (declare(strict_types=1);).
+- Gunakan Laravel Best Practices untuk penamaan Model, Controller, dan Migration.
+- Gunakan Filament Resources untuk Backend Admin.
+- Gunakan Laravel Policies untuk otorisasi (siapa yang boleh edit/delete).

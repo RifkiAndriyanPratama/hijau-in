@@ -17,10 +17,10 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
+        // Seed roles first so user seeder can reference them
         $this->call([
-        R::class,
-        U::class,
-    ]);
-        $this->call(RoleSeeder::class);
+            RoleSeeder::class,
+            U::class,
+        ]);
     }
 }

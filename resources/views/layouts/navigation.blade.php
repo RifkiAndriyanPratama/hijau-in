@@ -1,28 +1,38 @@
-<nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
+<nav x-data="{ open: false }" id="main-nav" class="sticky top-0 z-50 bg-emerald-600/90 dark:bg-neutral-950/70 backdrop-blur-md supports-[backdrop-filter]:bg-emerald-600/80 dark:supports-[backdrop-filter]:bg-neutral-950/60 border-b border-emerald-500/40 dark:border-emerald-700/40 transition-colors duration-300 text-white">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
+        <div class="flex justify-between h-24">
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
+                    <a href="{{ route('dashboard') }}" class="flex items-center gap-2">
+                        <img src="{{ asset('images/logo-hijauin.png') }}" alt="HijauIN" class="h-14 md:h-16 w-auto" />
+                        <span class="font-bold text-xl md:text-2xl text-white">HijauIN</span>
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                <div class="hidden space-x-6 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                </div>
+                    <x-nav-link href="/laporan-saya" :active="request()->routeIs('laporan.saya')">
+                        Laporan Saya
+                    </x-nav-link>
+                    @auth
+                        @if(strtolower(auth()->user()->role->nama_role) === 'admin')
+                            <x-nav-link href="{{ route('admin.laporan.masuk') }}" :active="request()->routeIs('admin.laporan.masuk')">
+                                Laporan Masuk
+                            </x-nav-link>
+                        @endif
+                    @endauth
             </div>
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
-                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
+                        <button class="inline-flex items-center px-5 py-3 border border-transparent text-base leading-5 font-medium rounded-md text-white bg-white/0 hover:text-emerald-100 focus:outline-none transition ease-in-out duration-150">
                             <div>{{ Auth::user()->name }}</div>
 
                             <div class="ms-1">
@@ -54,7 +64,7 @@
 
             <!-- Hamburger -->
             <div class="-me-2 flex items-center sm:hidden">
-                <button @click="open = ! open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 dark:text-gray-500 hover:text-gray-500 dark:hover:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-900 focus:text-gray-500 dark:focus:text-gray-400 transition duration-150 ease-in-out">
+                <button @click="open = ! open" class="inline-flex items-center justify-center p-3 rounded-md text-emerald-100 hover:text-white hover:bg-emerald-500/30 focus:outline-none focus:bg-emerald-500/40 transition duration-150 ease-in-out">
                     <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                         <path :class="{'hidden': open, 'inline-flex': ! open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         <path :class="{'hidden': ! open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -73,10 +83,10 @@
         </div>
 
         <!-- Responsive Settings Options -->
-        <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
+        <div class="pt-4 pb-1 border-t border-emerald-400/40 dark:border-emerald-700/40 bg-emerald-600/20">
             <div class="px-4">
-                <div class="font-medium text-base text-gray-800 dark:text-gray-200">{{ Auth::user()->name }}</div>
-                <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
+                <div class="font-medium text-base text-white">{{ Auth::user()->name }}</div>
+                <div class="font-medium text-sm text-emerald-100">{{ Auth::user()->email }}</div>
             </div>
 
             <div class="mt-3 space-y-1">
@@ -98,3 +108,19 @@
         </div>
     </div>
 </nav>
+
+<script>
+// Efek scroll: tambah bayangan & perkuat blur saat menggulir
+document.addEventListener('DOMContentLoaded', () => {
+    const nav = document.getElementById('main-nav');
+    const activate = () => {
+        if (window.scrollY > 10) {
+            nav.classList.add('backdrop-blur-lg','shadow-lg','bg-white/70','dark:bg-neutral-900/60');
+        } else {
+            nav.classList.remove('backdrop-blur-lg','shadow-lg','bg-white/70','dark:bg-neutral-900/60');
+        }
+    };
+    activate();
+    window.addEventListener('scroll', activate, { passive: true });
+});
+</script>
