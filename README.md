@@ -104,7 +104,10 @@ Dipersembahkan oleh mahasiswa yang peduli lingkungan:
 | **Backend** | Rifki Andriyan | [@RifkiAndriyanPratama](https://www.google.com/search?q=https://github.com/RifkiAndriyanPratama) |
 | **Frontend** | Sin-cai | [@Sin-cai](https://www.google.com/search?q=https://github.com/Sin-cai) |
 
-\<div align="center">
-<br>
-\<p>Dibuat dengan ❤️ untuk Bumi yang lebih hijau.\</p>
-\</div>
+
+<div align="center">
+  <p>
+    Dibuat dengan ❤️ untuk Bumi yang lebih hijau.<br>
+    &copy; 2025 Tim Si Imoet
+  </p>
+</div>
