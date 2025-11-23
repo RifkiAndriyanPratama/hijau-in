@@ -4,12 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class User extends Authenticatable implements FilamentUser
+class User extends Authenticatable implements FilamentUser, MustVerifyEmail
 {
     use HasFactory, Notifiable;
 
@@ -38,10 +40,9 @@ class User extends Authenticatable implements FilamentUser
         return $this->belongsTo(Role::class);
     }
 
-    // login buat admin sama petugas
+    // Fitur grup dihapus: akses panel untuk semua user terverifikasi
     public function canAccessPanel(Panel $panel): bool
     {
-        return $this->role
-            && ($this->role->nama_role === 'Admin' || $this->role->nama_role === 'Petugas');
+        return $this->hasVerifiedEmail() && $this->role !== null;
     }
 }

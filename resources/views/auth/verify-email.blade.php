@@ -8,6 +8,16 @@
             {{ __('A new verification link has been sent to the email address you provided during registration.') }}
         </div>
     @endif
+    @if (session('status') == 'verify-email-first')
+        <div class="mb-4 text-sm text-amber-600 dark:text-amber-400">
+            Email Anda belum terverifikasi. Jika belum menerima email, klik tombol di bawah untuk kirim ulang.
+        </div>
+    @endif
+    @if (session('status') == 'verification-send-failed')
+        <div class="mb-4 text-sm text-red-600 dark:text-red-400">
+            Pengiriman email verifikasi gagal (kemungkinan ditandai SPAM). Coba kirim ulang sebentar lagi atau hubungi admin. Pastikan alamat email valid.
+        </div>
+    @endif
 
     <div class="mt-4 flex items-center justify-between">
         <form method="POST" action="{{ route('verification.send') }}">

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="40" viewBox="0 0 160 40" fill="none">
+  <rect width="160" height="40" rx="8" fill="#065F46"/>
+  <g font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Ubuntu" font-size="20" font-weight="600" fill="#FDE68A">
+    <text x="16" y="26">HijauIN</text>
+  </g>
+  <circle cx="132" cy="20" r="12" fill="#10B981" stroke="#FDE68A" stroke-width="2"/>
+  <path d="M132 14c2.2 2.4 3.3 4.6 3.2 6.8-.1 2.2-1.3 4.2-3.2 5.2-1.9-1-3.1-3-3.2-5.2-.1-2.2 1-4.4 3.2-6.8Z" fill="#FDE68A"/>
+</svg>

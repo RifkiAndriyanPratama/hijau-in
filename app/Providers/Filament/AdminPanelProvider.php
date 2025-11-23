@@ -27,8 +27,12 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            ->brandName('HijauIN')
+            ->brandLogo(asset('images/logo-hijauin.png')) // unified logo PNG
+            ->brandLogoHeight('2rem')
+            ->viteTheme('resources/css/filament/hijauin.css')
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => Color::Emerald,
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
@@ -40,6 +44,16 @@ class AdminPanelProvider extends PanelProvider
                 Widgets\AccountWidget::class,
                 Widgets\FilamentInfoWidget::class,
             ])
+                        ->renderHook('panels::body.end', fn() => <<<'HTML'
+<script>
+document.addEventListener('scroll', () => {
+    const topbar = document.querySelector('.fi-topbar');
+    if(!topbar) return;
+    topbar.classList.toggle('scrolled', window.scrollY > 4);
+});
+</script>
+HTML
+                        )
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,

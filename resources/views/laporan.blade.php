@@ -24,40 +24,20 @@
 
   <div class="main-content" id="mainContent">
     <h2 class="form-title">Form Laporan</h2>
-    <form class="form-laporan">
-      <label>Nama:</label>
-      <input type="text" />
+    <form class="form-laporan" method="POST" action="{{ route('lapor.store') }}" enctype="multipart/form-data">
+      @csrf
+      <label>Lokasi:</label>
+      <input type="text" name="lokasi" required />
 
-      <label>Email:</label>
-      <input type="email" />
+      <label>Keterangan:</label>
+      <textarea name="keterangan" rows="4" required></textarea>
 
-      <label>Nomor Telepon:</label>
-      <input type="text" />
+      <label>Foto Lokasi (maks 5):</label>
+      <input type="file" name="fotos[]" multiple accept="image/*" required />
 
-      <label>Jenis Masalah:</label>
-      <select>
-        <option>Pilih Jenis Masalah</option>
-        <option>Sampah</option>
-        <option>Pencemaran</option>
-        <option>Lainnya</option>
-      </select>
+      <p class="help">Format: jpg/png/gif, max 2MB per file.</p>
 
-      <label>Deskripsi:</label>
-      <textarea rows="3"></textarea>
-
-      <label>Tanggal:</label>
-      <input type="date" />
-
-      <label>Alamat Lokasi:</label>
-      <input type="text" />
-
-      <label>Foto Lokasi:</label>
-      <input type="file" />
-
-      <label>Tandai Lokasi:</label>
-      <img src="https://maps.googleapis.com/maps/api/staticmap?center=Yogyakarta&zoom=13&size=600x300&key=YOUR_API_KEY" alt="Map">
-
-      <button type="submit" class="submit-btn">Submit →</button>
+      <button type="submit" class="submit-btn">Kirim Laporan →</button>
     </form>
   </div>
 

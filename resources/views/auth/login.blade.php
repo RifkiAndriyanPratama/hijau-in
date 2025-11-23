@@ -1,6 +1,21 @@
 <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
+    @if(session('status') === 'registration-otp-success')
+        <div class="mb-4 text-sm text-green-600 dark:text-green-400">
+            Akun berhasil diaktivasi. Silakan login.
+        </div>
+    @endif
+    @if(session('status') === 'login-otp-send-failed')
+        <div class="mb-4 text-sm text-red-600 dark:text-red-400">
+            Gagal mengirim OTP login. Coba lagi atau tekan Kirim Ulang di halaman OTP.
+        </div>
+    @endif
+    @if(session('status') === 'registration-otp-success')
+        <div class="mb-4 text-sm text-green-600 dark:text-green-400">
+            OTP aktivasi berhasil diverifikasi. Silakan login sekarang.
+        </div>
+    @endif
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
