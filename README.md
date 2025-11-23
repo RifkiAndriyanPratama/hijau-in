@@ -100,9 +100,9 @@ Dipersembahkan oleh mahasiswa yang peduli lingkungan:
 
 | Peran | Nama | Username |
 | :--- | :--- | :--- |
-| **Backend & DevOps** | Taufik | [@fiksDevvv](https://www.google.com/search?q=https://github.com/fiksDevvv) |
-| **Frontend Developer** | Rifki Andriyan | [@RifkiAndriyanPratama](https://www.google.com/search?q=https://github.com/RifkiAndriyanPratama) |
-| **UI/UX Designer** | Sin-cai | [@Sin-cai](https://www.google.com/search?q=https://github.com/Sin-cai) |
+| **DevOps** | Taufik | [@fiksDevvv](https://www.google.com/search?q=https://github.com/fiksDevvv) |
+| **Backend** | Rifki Andriyan | [@RifkiAndriyanPratama](https://www.google.com/search?q=https://github.com/RifkiAndriyanPratama) |
+| **Frontend** | Sin-cai | [@Sin-cai](https://www.google.com/search?q=https://github.com/Sin-cai) |
 
 \<div align="center"\>
 <br>
