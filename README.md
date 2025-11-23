@@ -1,59 +1,12 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
-
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<div align="center"><a href="https://www.google.com/search?q=https://github.com/username/hijauin"><img src="public/images/logo-hijauin.png" alt="Logo HijauIN" width="120" height="120"></a><h1 align="center">HijauIN 🌱</h1><p align="center"><strong>Platform Kolaboratif untuk Lingkungan yang Lebih Bersih dan Transparan</strong></p><p align="center"><a href="https://laravel.com"><img src="https://www.google.com/search?q=https://img.shields.io/badge/Laravel-11-FF2D20%3Fstyle%3Dfor-the-badge%26logo%3Dlaravel%26logoColor%3Dwhite" alt="Laravel 11"></a><a href="https://filamentphp.com"><img src="https://www.google.com/search?q=https://img.shields.io/badge/Filament-v3-F28D15%3Fstyle%3Dfor-the-badge%26logo%3Dfilament%26logoColor%3Dwhite" alt="Filament v3"></a><a href="https://tailwindcss.com"><img src="https://www.google.com/search?q=https://img.shields.io/badge/Tailwind_CSS-3.0-38B2AC%3Fstyle%3Dfor-the-badge%26logo%3Dtailwind-css%26logoColor%3Dwhite" alt="Tailwind CSS"></a><a href="https://mysql.com"><img src="https://www.google.com/search?q=https://img.shields.io/badge/MySQL-8.0-4479A1%3Fstyle%3Dfor-the-badge%26logo%3Dmysql%26logoColor%3Dwhite" alt="MySQL"></a></p></div>🌏 Mengapa HijauIN?Pernahkah Anda melihat tumpukan sampah liar atau saluran air yang tersumbat, namun bingung harus melapor ke mana? Atau mungkin Anda sudah melapor, tetapi tidak pernah tahu apakah masalah tersebut sudah ditangani?HijauIN hadir sebagai solusi.Aplikasi ini berfungsi sebagai jembatan digital antara Masyarakat dan Pemerintah/Petugas. Kami mengubah keluhan menjadi data yang dapat ditindaklanjuti, dilacak, dan diselesaikan secara transparan.🚀 Fitur Unggulan📱 Untuk Warga (Pelapor)Lapor Cepat: Cukup ambil foto, lokasi terdeteksi otomatis (GPS), dan kirim.Real-time Tracking: Pantau status laporan Anda: Pending ➝ Disetujui ➝ Dikerjakan ➝ Selesai.Bukti Nyata: Lihat foto "Before & After" sebagai bukti validasi bahwa masalah telah beres.🛡️ Untuk Admin & PetugasVerifikasi Mudah: Panel admin (Filament) untuk memfilter laporan valid vs spam.Manajemen Tim: Penugasan petugas lapangan secara spesifik.Analitik Data: Statistik visual untuk memantau area dengan masalah lingkungan terbanyak.🛠️ TeknologiProyek ini dibangun dengan stack modern untuk performa dan kemudahan pengembangan:Framework: Laravel 11 - Fondasi yang kokoh dan aman.Admin Panel: FilamentPHP - Dashboard super cepat dan reaktif.Styling: Tailwind CSS - Desain antarmuka modern dan responsif (Dark Mode ready).Database: MySQL - Penyimpanan data relasional yang handal.💻 Cara Menjalankan (Localhost)Ingin mencoba atau berkontribusi? Ikuti langkah mudah ini:Clone Repositorygit clone [https://github.com/username/hijauin.git](https://github.com/username/hijauin.git)
+cd hijauin
+Setup Environmentcp .env.example .env
+# Edit .env sesuaikan database Anda
+Install Dependenciescomposer install
+npm install
+Database & Seedingphp artisan migrate --seed
+# Ini akan membuat akun Superadmin default
+Runnpm run dev
+# Buka terminal baru
+php artisan serve
+👥 Tim PengembangKarya ini dipersembahkan oleh mahasiswa yang peduli lingkungan:PeranNamaUsernameBackend & DevOpsTaufik@fiksDevvvFrontend DeveloperRifki Andriyan@RifkiAndriyanPratamaUI/UX DesignerSin-cai@Sin-cai<div align="center"><p>Dibuat dengan ❤️ untuk Bumi yang lebih hijau.</p></div>
